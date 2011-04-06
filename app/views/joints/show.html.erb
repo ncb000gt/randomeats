@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @joint.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @joint.desc %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= render :partial => "tags/tag", :collection => @joint.tags %>
+</p>
+
+<h3>Add a tag:</h3>
+<%= form_for([@joint, @joint.tags.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_joint_path(@joint) %> |
+<%= link_to 'Back', joints_path %>

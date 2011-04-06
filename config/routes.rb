@@ -1,4 +1,11 @@
 Randomeats::Application.routes.draw do
+  resources :joints do
+    resources :tags
+  end
+
+  get "home/random"
+  get "home/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
