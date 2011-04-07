@@ -1,1 +1,9 @@
 body{background:#643569;}
+.rand{background:#7792ad;display:block;margin:0 auto;width:150px;height:50px;text-align:center;text-decoration:none;color:#fff;padding-top:4px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border:none;cursor:pointer;}
+h1,h2{width:300px;margin:10px auto;text-align:center;}
+form,fieldset{border:0;}
+form{margin:20px 0;}
+.rand:visited{color:#fff;}
+.tags{width:600px;margin:0 auto;}
+.tags ul{margin:0;padding:0;overflow:hidden;}
+.tags li{float:left;width:150px;margin:0;padding:0;list-style:none;}

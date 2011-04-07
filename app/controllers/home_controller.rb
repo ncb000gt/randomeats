@@ -1,14 +1,17 @@
 class HomeController < ApplicationController
   def index
+    @tags = Tag.find(:all, :select => 'DISTINCT name')
   end
 
   def random
-    @t = params[:tag_ids] || nil 
-    if (@t != nil)
-      @joints = Joint.joins(:tags).where('tags.name' => @t.split(',')).find(:all)#.count(:all)
+    
+    @t = params[:tag_ids] || {}
+    if (@t.keys.length != 0)
+      @joints = Joint.joins(:tags).where('tags.name' => @t.keys ).find(:all)#.count(:all)
     else
       @joints = Joint.find(:all)#.count(:all)
     end
+    puts "len: ",@joints.length
     @r = @joints[rand(@joints.length)].name
   end
 end

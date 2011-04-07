@@ -1,6 +1,13 @@
-<h1>Hello World</h1>
-<style>
-  .rand{background:#7792ad;display:block;margin:0 auto;width:200px;height:30px;text-align:center;text-decoration:none;color:#fff;padding-top:14px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
-</style>
-<div><a href="/home/random" class="rand">Roll the Dice</a></div>
+<h1>Random Eats</h1>
+<h2>Let it decide where you dine.</h2>
+<%= form_tag("/random", :method => "post") do %>
+  <fieldset class="tags">
+    <ul>
+      <%= render :partial => "tags/tag_selection", :collection => @tags %>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <input type="submit" class="rand" value="Roll the Dice" />
+  </fieldset>
+<% end %>
 <div><%= link_to "Add another Joint", joints_path %></div>
