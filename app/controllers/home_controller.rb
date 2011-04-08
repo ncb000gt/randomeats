@@ -12,6 +12,7 @@ class HomeController < ApplicationController
       @joints = Joint.find(:all)#.count(:all)
     end
     puts "len: ",@joints.length
-    @r = @joints[rand(@joints.length)].name
+    @r = @joints[rand(@joints.length)]
+    redirect_to(@r)
   end
 end
