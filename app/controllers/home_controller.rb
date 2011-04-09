@@ -7,9 +7,9 @@ class HomeController < ApplicationController
     
     @t = params[:tag_ids] || {}
     if (@t.keys.length != 0)
-      @joints = Joint.joins(:tags).where('tags.name' => @t.keys ).find(:all)#.count(:all)
+      @joints = Joint.joins(:tags).where('tags.name' => @t.keys ).find(:all)
     else
-      @joints = Joint.find(:all)#.count(:all)
+      @joints = Joint.find(:all)
     end
     puts "len: ",@joints.length
     @r = @joints[rand(@joints.length)]
